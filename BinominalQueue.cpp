@@ -191,7 +191,7 @@ BinQueue CreateQueue()
 	return H;
 }
 
-void Travel(BinTree T)
+void Traverse(BinTree T)
 {
 	queue<BinTree> Q;
 	BinTree tmp;
@@ -205,7 +205,7 @@ void Travel(BinTree T)
 	}
 }
 
-void TravelSiblings(BinTree T, queue<BinTree> &Q)
+void TraverseSiblings(BinTree T, queue<BinTree> &Q)
 {
 	if (T)
 	{
