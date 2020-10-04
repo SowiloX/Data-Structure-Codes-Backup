@@ -1,5 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 #define MAX 8
 
@@ -27,19 +29,18 @@ int main()
 	G.arcs[7][3] = G.arcs[7][4] = G.arcs[7][5] = G.arcs[7][6] = 1;
 
 	int start;
-	scanf("%d", &start);
+	cin >> start;
 	DFS(G, start);
 }
 
 void DFS(Graph G, int v)
 {
 	visited[v] = 1;
-	printf("%d,", v + 1);
+	cout << v << " ";
 
-	int w;
-	for (w = 0; w <G.vexnum; w ++)
+	for (int w = 0; w < G.vexnum; w++)
 	{
-		if (!visited[w] && !G.arcs[v][w])
+		if (!visited[w] && G.arcs[v][w])
 			DFS(G, w);
 	}
 }
