@@ -34,7 +34,7 @@ int main()
 	for (int i = 0; i < 10; i++)
 		BTreeInsert(T, A[i]);
 
-	Travel(T.Root);
+	Traverse(T.Root);
 }
 
 void CreatBTree(BTree &T, int M)
@@ -96,7 +96,7 @@ BNode CreatBNode(BTree T)
 
 	Node->Size = 0;
 	Node->Parent = NULL;
-	Node->Key = (ElementType*)malloc((T.Max + 1) * sizeof(ElementType)); //¶à·ÖÅäÒ»¸öÎ»ÖÃ·½±ãÒÆ¶¯
+	Node->Key = (ElementType*)malloc((T.Max + 1) * sizeof(ElementType)); //ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î»ï¿½Ã·ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	if (Node->Key == NULL)
 	{
 		printf("Out of Space!");
@@ -176,7 +176,7 @@ void SplitBTree(BTree &T, BNode Node)
 	}
 }
 
-void Travel(BNode Root)
+void Traverse(BNode Root)
 {
 	if (Root)
 	{
@@ -185,6 +185,6 @@ void Travel(BNode Root)
 			printf("%d ", current->Key[i]);
 		printf("\n");
 		for (int i = 0; i <= current->Size; i++)
-			Travel(current->Child[i]);
+			Traverse(current->Child[i]);
 	}
 }
