@@ -95,12 +95,11 @@ void Prim(AMGraph G)
 				w = current->jvex;
 			else
 				w = current->ivex;
-			if (!G.list[w].Know)
-				if (current->info < G.list[w].Dist)
-				{
-					G.list[w].Dist = current->info;
-					G.list[w].Path = v;
-				}
+			if (!G.list[w].Know && current->info < G.list[w].Dist)
+			{
+				G.list[w].Dist = current->info;
+				G.list[w].Path = v;
+			}
 
 			if (v == current->ivex)
 				current = current->ilink;
