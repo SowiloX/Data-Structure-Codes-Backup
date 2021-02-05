@@ -96,9 +96,4 @@ void CreatDG(OLGraph &G)
 
 		G.xlist[j].firstin = G.xlist[i].firstout = p;
 	}
-
-	for (i = 0; i < G.vexnum; i++)
-		G.xlist[i].firstout = BubbleSort(G.xlist[i].firstout);
-	for (i = 0; i < G.vexnum; i++)
-		thumbup(G.xlist[i].firstout);
 }

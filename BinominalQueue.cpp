@@ -26,8 +26,8 @@ BinQueue Merge(BinQueue H1, BinQueue H2);
 ElementType DeleteMin(BinQueue H);
 BinQueue Insert(ElementType X, BinQueue H);
 BinQueue CreateQueue();
-void Travel(BinTree T);
-void TravelSiblings(BinTree T, queue<BinTree> &Q);
+void Traverse(BinTree T);
+void TraverseSiblings(BinTree T, queue<BinTree> &Q);
 
 int main()
 {
@@ -201,7 +201,7 @@ void Traverse(BinTree T)
 		tmp = Q.front();
 		printf("%d,", tmp->Element);
 		Q.pop();
-		TravelSiblings(tmp->Left, Q);
+		TraverseSiblings(tmp->Left, Q);
 	}
 }
 
@@ -209,7 +209,7 @@ void TraverseSiblings(BinTree T, queue<BinTree> &Q)
 {
 	if (T)
 	{
-		TravelSiblings(T->Next, Q);
+		TraverseSiblings(T->Next, Q);
 		Q.push(T);
 	}
 }
